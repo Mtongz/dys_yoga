@@ -10,6 +10,13 @@ VueRouter.prototype.push = function push(location) {
 
 const Home = () => import( /* webpackChunkName: "home" */ 'views/home/Home')
 
+const Commodities = () => import( /* webpackChunkName: "home" */ 'views/commodities/Commodities')
+const Detail = () => import( /* webpackChunkName: "home" */ 'views/commodities/detail/Detail')
+
+const Cart = () => import( /* webpackChunkName: "home" */ 'views/cart/Cart')
+
+const Login = () => import( /* webpackChunkName: "home" */ 'views/user/Login')
+
 Vue.use(VueRouter)
 
 const routes = [{
