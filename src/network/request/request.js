@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const service = axios.create({
-
-  baseURL: 'http://152.136.185.210:7878/api/m5',
+// http://192.168.110.137:7000/api/account/auth/cms_login__doc
+  baseURL: 'http://192.168.110.137:7000/api/doc',
   // 延时
   timeout: 5 * 1000,
   withCredentials: true //是否允许携带凭证

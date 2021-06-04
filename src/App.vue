@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-    <router-link to="/home">home</router-link>
-      <router-view></router-view>
+    <Header v-if="!$route.meta.isHeaderHide" />
+    <router-view />
+    <!-- 当不是登录或者注册时就显示 -->
+    <Footer v-if="!$route.meta.isFooterHide" />
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'app',
   components: {
     
-  }
-}
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

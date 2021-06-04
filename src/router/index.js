@@ -7,38 +7,77 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
+/* webpackChunkName: "component.path" */
+const Home = () => import('views/home/Home')
 
-const Home = () => import( /* webpackChunkName: "home" */ 'views/home/Home')
+const Commodities = () => import('views/commodities/Commodities')
+const Detail = () => import('views/commodities/detail/Detail')
 
-const Commodities = () => import( /* webpackChunkName: "home" */ 'views/commodities/Commodities')
-const Detail = () => import( /* webpackChunkName: "home" */ 'views/commodities/detail/Detail')
+const Cart = () => import('views/cart/Cart')
 
-const Cart = () => import( /* webpackChunkName: "home" */ 'views/cart/Cart')
-
-const Login = () => import( /* webpackChunkName: "home" */ 'views/user/Login')
+const Login = () => import('views/user/Login')
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
     redirect: '/home',
-    meta: {
-      requireAuth: false,
-      keepAlive: false
-    },
   },
   {
     path: '/home',
     name: 'Home',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Home,
     meta: {
       requireAuth: false,
-      keepAlive: false
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false
     },
-  }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      requireAuth: false,
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false
+    },
+  },
+  {
+    path: '/commodities',
+    name: 'Commodities',
+    component: Commodities,
+    meta: {
+      requireAuth: false,
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false
+    },
+  },
+  {
+    path: '/detail',
+    name: 'Detail',
+    component: Detail,
+    meta: {
+      requireAuth: false,
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false
+    },
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
+    meta: {
+      requireAuth: true,
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false
+    },
+  },
 ]
 
 
