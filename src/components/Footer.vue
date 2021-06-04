@@ -82,7 +82,8 @@
       </el-col>
     </el-row>
     <section class="footer-copyright">
-      <i class="fa fa-copyright"></i>Imbella Co., Ltd
+      <i class="fa fa-copyright"></i>
+      <span>Imbella Co., Ltd</span>
     </section>
   </footer>
 </template>

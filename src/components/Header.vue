@@ -4,21 +4,15 @@
       <section class="header-wrap dfbc">
         <div class="imb-logo">
           <h1>
-            <!-- <router-link to="Home" class="logo-bd"> -->
             <a
               href="http://192.168.110.201:8080"
               title="imbella"
               class="logo-bd"
               >imbella</a
             >
-            <!-- imbella
-						</router-link> -->
           </h1>
-          <!-- <h2 aria-hidden="true">
-						<a href="#">imbella</a>
-					</h2> -->
         </div>
-        <div class="imb-search-box">
+        <div class="imb-search-box" v-if="this.$route.path !== '/login'">
           <!-- 方案一：原生form -->
           <div class="imb-search">
             <form class="imb-searchForm">
@@ -34,7 +28,7 @@
             </form>
           </div>
         </div>
-        <div class="imb-fastNav">
+        <div class="imb-fastNav" v-if="this.$route.path !== '/login'">
           <div class="imb-userCenter">
             <div class="user-item">
               <a href="#">
@@ -103,11 +97,15 @@ export default {
   data() {
     return {};
   },
+  created() {
+    console.log(this.$route.path);
+
+  },
   methods: {
     personalCenter() {},
     loginOut() {
       localStorage.removeItem("token");
-      this.$router.push("/Login");
+      this.$router.push("/login");
       // location.reload();
     },
     goCart() {
