@@ -31,7 +31,8 @@ const routes = [{
       requireAuth: false,
       keepAlive: false,
       isFooterHide: false,
-      isHeaderHide: false
+      isHeaderHide: false,
+      isBlack: false
     },
   },
   {
@@ -42,7 +43,8 @@ const routes = [{
       requireAuth: false,
       keepAlive: false,
       isFooterHide: false,
-      isHeaderHide: false
+      isHeaderHide: false,
+      isBlack: true
     },
   },
   {
@@ -53,7 +55,8 @@ const routes = [{
       requireAuth: false,
       keepAlive: false,
       isFooterHide: false,
-      isHeaderHide: false
+      isHeaderHide: false,
+      isBlack: false
     },
   },
   {
@@ -64,7 +67,8 @@ const routes = [{
       requireAuth: false,
       keepAlive: false,
       isFooterHide: false,
-      isHeaderHide: false
+      isHeaderHide: false,
+      isBlack: true
     },
   },
   {
@@ -75,7 +79,8 @@ const routes = [{
       requireAuth: true,
       keepAlive: false,
       isFooterHide: false,
-      isHeaderHide: false
+      isHeaderHide: false,
+      isBlack: true
     },
   },
 ]

@@ -29,6 +29,7 @@
           autocomplete="current-password"
           class="register-password"
           v-model="registerForm.password"
+          show-password
         ></el-input>
       </el-form-item>
       <el-form-item>
