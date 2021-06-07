@@ -48,7 +48,7 @@ module.exports = {
     proxy: { //配置代理服务器
       "/api": {
         // http://192.168.110.137:7000/api/account/auth/cms_login__doc
-        target: "http://192.168.110.137:7000/api/doc", //目标网址
+        target: "http://192.168.110.137:7000/", //目标网址
         changeOrigin: true,
         pathRewrite: {
           "^/api": '' //发请求的时候要把上面taget填写的地址参数改成/api注意改完这个配置文件一定要重启服务器

@@ -95,7 +95,7 @@ const router = new VueRouter({
 
 
 router.beforeEach((to, from, next) => {
-  const name = sessionStorage.getItem("username");
+  // const name = sessionStorage.getItem("username");
   const token = sessionStorage.getItem("token");
 
   if (to.matched.some(record => record.meta.requireAuth)) {
@@ -115,6 +115,7 @@ router.beforeEach((to, from, next) => {
         //     next('/Login');
         //   }
         // })
+        next();
       } else {
         next('/login')
       }
