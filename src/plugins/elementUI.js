@@ -155,7 +155,10 @@ Vue.use(CascaderPanel);
 
 Vue.use(Loading.directive);
 
-
+// $msgbox(options)
+// $alert(message, title, options) 或 $alert(message, options)
+// $confirm(message, title, options) 或 $confirm(message, options)
+// $prompt(message, title, options) 或 $prompt(message, options)
 // Loading 加载 this.$loading(options) 
 Vue.prototype.$loading = Loading.service;
 // MessageBox 弹框
