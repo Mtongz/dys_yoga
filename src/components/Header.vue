@@ -4,10 +4,7 @@
       <section class="header-wrap dfbc">
         <div class="imb-logo">
           <h1>
-            <a
-              href="http://192.168.110.201:8080"
-              title="imbella"
-              class="logo-bd"
+            <a href="http://192.168.110.39:8080" title="imbella" class="logo-bd"
               >imbella</a
             >
           </h1>
@@ -63,15 +60,10 @@
                 </div>
               </div>
             </div>
-            <div class="user-item">
-              <a href="#">
-                <el-badge :value="2" :max="99" class="cart-sign">
-                  <span
-                    class="fa fa-shopping-cart fa-2x"
-                    @click="goCart"
-                  ></span></el-badge
-                ><span></span
-              ></a>
+            <div class="user-item" @click="goCart">
+              <el-badge :value="2" :max="99" class="cart-sign">
+                <span class="fa fa-shopping-cart fa-2x"></span>
+              </el-badge>
             </div>
           </div>
         </div>
@@ -99,17 +91,18 @@ export default {
   },
   created() {
     console.log(this.$route.path);
-
   },
   methods: {
     personalCenter() {},
     loginOut() {
       localStorage.removeItem("token");
-      this.$router.push("/login");
+      this.$router.replace("/login");
       // location.reload();
     },
     goCart() {
-      this.$router.push("/Cart");
+      if (this.$route.path !== "/cart") {
+        this.$router.push("/cart");
+      }
     },
   },
 };
