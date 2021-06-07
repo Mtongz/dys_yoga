@@ -20,10 +20,7 @@
         ></el-input>
       </el-form-item>
       <!-- 密码 -->
-      <el-form-item
-        label="Password"
-        prop="password"
-      >
+      <el-form-item label="Password" prop="password">
         <el-input
           type="password"
           autocomplete="current-password"
@@ -76,7 +73,27 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          const email = this.registerForm.username;
+          const password = this.registerForm.password;
+          console.log(this.$http);
+          this.$http.userApi
+            .register({
+              email,
+              password,
+            })
+            .then((res) => {
+              console.log(res);
+              if (res.code === 200) {
+                this.$alert("注册成功！", {
+                  confirmButtonText: "确定",
+                });
+              } else if (res.code === 600) {
+                this.$message({
+                  message: res.msg,
+                  type: "warning",
+                });
+              }
+            });
         } else {
           console.log("error submit!!");
           return false;

@@ -42,6 +42,7 @@
           type="primary"
           @click="submitForm('loginForm')"
           class="login-btn"
+          :loading="isLoginIng"
           >SIGN IN</el-button
         >
       </el-form-item>
@@ -59,6 +60,7 @@ export default {
         username: "",
         password: "",
       },
+      isLoginIng: false,
     };
   },
   computed: {
@@ -85,7 +87,18 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          const email = this.loginForm.username;
+          const password = this.loginForm.password;
+          this.isLoginIng = true;
+          this.$http.userApi.login({
+            email,
+            password
+          }).then(res=>{
+            console.log(res);
+            localStorage.setItem('token',res.data.session_id)
+            this.$router.push("/home");
+            this.isLoginIng = false;
+          })
         } else {
           console.log("error submit!!");
           return false;

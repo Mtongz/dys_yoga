@@ -1,24 +1,19 @@
 <template>
-  <div class='home-swiper'>
-    <swiper class="swiper"
-            :options="swiperOption">
-      <swiper-slide v-for="(item, index) in imgList"
-                    :key="index">
-        <img :src="item.url" />
+  <div class="home-swiper">
+    <swiper class="swiper" :options="swiperOption" ref="homeSwiper">
+      <swiper-slide v-for="(item, index) in bannerList" :key="item.cover">
+        <img class="swiper-img" :src="item.cover" />
       </swiper-slide>
-      <div class="swiper-pagination"
-           slot="pagination"></div>
-      <div class="swiper-button-prev"
-           slot="button-prev"></div>
-      <div class="swiper-button-next"
-           slot="button-next"></div>
+      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
   </div>
 </template>
 
 <script>
 export default {
-  name: '',
+  name: "",
   data() {
     return {
       swiperOption: {
@@ -31,43 +26,57 @@ export default {
           disableOnInteraction: false,
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       },
+    };
+  },
+  props: {
+    bannerList: {
+      type: Array,
+      default() {
+        return [];
+      }
     }
   },
-  props: {},
   components: {},
   computed: {
     swiper() {
-      return this.$refs.mySwiper.swiper
+      return this.$refs.homeSwiper.swiper;
     },
   },
   watch: {},
-  created() {},
+  created() {
+    console.log(this.bannerList);
+  },
   mounted() {
     // current swiper instance
     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-    console.log('this is current swiper instance object', this.swiper)
+    console.log("this is current swiper instance object", this.swiper);
     // this.swiper.slideTo(3, 1000, false);
   },
   methods: {},
-}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
+.home-swiper {
+  margin: 1.25rem 0;
+}
 .swiper-container {
-  height: 700px;
+  // height: 32.5rem;
+  min-width: 80rem;
   .swiper-slide {
     width: 100%;
-    line-height: 700px;
+    // line-height: 32.5rem;
     img {
       width: 100%;
+      object-fit: cover;
     }
   }
 }

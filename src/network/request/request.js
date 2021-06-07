@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const service = axios.create({
 // http://192.168.110.137:7000/api/account/auth/cms_login__doc
-  baseURL: 'http://192.168.110.137:7000/api/doc',
+  baseURL: 'http://192.168.110.137:7000/api',
   // 延时
   timeout: 5 * 1000,
   withCredentials: true //是否允许携带凭证
@@ -24,10 +24,11 @@ service.interceptors.response.use(
   res => {
     const _data = res.data
     if (_data.success || _data.code == 200) {
-      return _data
+      
     } else {
 
     }
+    return _data
   },
   err => {
     return Promise.reject(err);
