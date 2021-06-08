@@ -35,8 +35,7 @@
             </div>
             <div class="user-item userLogin">
               <div class="user-info">
-                <div v-show="false"><a href="#">login</a></div>
-                <div v-show="true" class="loginState">
+                <div v-if="$store.state.token" class="loginState">
                   <!-- <a href="#"
 										>sadasdasdasdasd <span class="fa fa-angle-down"></span> -->
                   <el-popover
@@ -58,13 +57,18 @@
                   </el-popover>
                   <!-- </a> -->
                 </div>
+                <div v-else>
+                  <router-link to="/login">login</router-link>
+                </div>
               </div>
             </div>
-            <div class="user-item" @click="goCart">
-              <el-badge :value="2" :max="99" class="cart-sign">
-                <span class="fa fa-shopping-cart fa-2x"></span>
-              </el-badge>
-            </div>
+            <router-link to="/cart">
+              <div class="user-item">
+                <el-badge :value="2" :max="99" class="cart-sign">
+                  <span class="fa fa-shopping-cart fa-2x"></span>
+                </el-badge>
+              </div>
+            </router-link>
           </div>
         </div>
       </section>
@@ -90,19 +94,25 @@ export default {
     return {};
   },
   created() {
-    console.log(this.$route.path);
+    // console.log(this.$route.path);
+    console.log(this.$store.state.token);
+    console.log(localStorage.getItem('token'));
   },
   methods: {
     personalCenter() {},
     loginOut() {
-      localStorage.removeItem("token");
-      this.$router.replace("/login");
+      this.$confirm("此操作将退出登录, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+      }).then(() => {
+        localStorage.removeItem("token");
+        this.$router.replace("/login");
+      }).catch(()=>{
+        console.log('quxiao');
+      });
+
       // location.reload();
-    },
-    goCart() {
-      if (this.$route.path !== "/cart") {
-        this.$router.push("/cart");
-      }
     },
   },
 };

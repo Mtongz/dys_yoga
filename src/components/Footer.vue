@@ -41,7 +41,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$router.meta);
+    // console.log(this.$router.meta);
   },
   methods: {
     onSubmit() {

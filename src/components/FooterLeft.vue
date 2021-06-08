@@ -42,7 +42,6 @@ export default {
 <style scoped lang="scss">
 .footer-left {
   padding: 1.25rem 0;
-  text-align: center;
 }
 .link-item {
   height: 12.5rem;

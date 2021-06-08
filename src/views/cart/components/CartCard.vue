@@ -1,29 +1,29 @@
 <template>
-  <div class="cart-card">
+  <div class="">
     <el-card class="box-card">
-      <section class="dfbc">
+      <section class="item dfbc">
         <span>订单小计</span>
-        <span>已选{{cartList.selectGoods}}件商品</span>
+        <span>已选{{ cartList.selectGoods }}件商品</span>
       </section>
       <el-divider></el-divider>
       <section class="">
-        <div>
+        <div class="item dfbc">
           <span>商品总计</span>
-          <span>{{cartList.goodsTotalPrice}}</span>
+          <span>{{ cartList.goodsTotalPrice }}</span>
         </div>
-        <div>
+        <div class="item dfbc">
           <span>运费</span>
-          <span>{{cartList.otherPrice}}</span>
+          <span>{{ cartList.otherPrice }}</span>
         </div>
-        <div>
+        <div class="item dfbc">
           <span>总计</span>
-          <span>{{cartList.totalPrice}}</span>
+          <span>{{ cartList.totalPrice }}</span>
         </div>
       </section>
       <el-divider></el-divider>
-      <section class="">
+      <section class="card-desc">
         <span>说明</span>
-        <div>{{cartList.desc}}</div>
+        <div class="item">{{ cartList.desc }}</div>
       </section>
       <el-divider></el-divider>
       <section class="">
@@ -56,5 +56,11 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-
+.box-card {
+  font-size: 0.8125rem;
+}
+.card-desc {
+  color: #a3a3a3;
+  
+}
 </style>

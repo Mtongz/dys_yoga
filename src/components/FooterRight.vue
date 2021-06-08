@@ -60,10 +60,9 @@ export default {
 <style scoped lang="scss">
 .footer-right {
   position: relative;
-  text-align: center;
 }
 .footer-infoMenu {
-  padding: 1.25rem 0;
+  padding: 1.25rem 0.65rem;
   margin-bottom: 0.625rem;
 }
 .footer-menuItem {

@@ -118,7 +118,7 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 5,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -127,7 +127,7 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 6,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -136,7 +136,7 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 7,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -145,7 +145,7 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 8,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -154,7 +154,7 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 9,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -163,7 +163,52 @@ export default {
           goodTotal: 4000,
         },
         {
-          id: 4,
+          id: 10,
+          shopImg:
+            "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
+          shop: "小米10",
+          price: 4000,
+          number: 1,
+          goodTotal: 4000,
+        },
+        {
+          id: 11,
+          shopImg:
+            "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
+          shop: "小米10",
+          price: 4000,
+          number: 1,
+          goodTotal: 4000,
+        },
+        {
+          id: 12,
+          shopImg:
+            "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
+          shop: "小米10",
+          price: 4000,
+          number: 1,
+          goodTotal: 4000,
+        },
+        {
+          id: 13,
+          shopImg:
+            "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
+          shop: "小米10",
+          price: 4000,
+          number: 1,
+          goodTotal: 4000,
+        },
+        {
+          id: 14,
+          shopImg:
+            "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
+          shop: "小米10",
+          price: 4000,
+          number: 1,
+          goodTotal: 4000,
+        },
+        {
+          id: 15,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
@@ -290,7 +335,7 @@ export default {
 .cart-table {
   width: 70rem;
   margin: 3.125rem 0 .625rem 0;
-  // position: relative;
+  position: relative;
   ::v-deep .el-input__inner {
     text-align: center;
   }
@@ -370,5 +415,6 @@ export default {
   right: 2.5rem;
   transform: translateY(-50%);
   width: 20rem;
+  z-index: 1;
 }
 </style>

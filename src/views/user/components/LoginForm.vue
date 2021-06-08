@@ -96,6 +96,7 @@ export default {
           }).then(res=>{
             console.log(res);
             localStorage.setItem('token',res.data.session_id)
+            this.$store.commit("setToken", res.data.session_id)
             this.$router.push("/home");
             this.isLoginIng = false;
           })

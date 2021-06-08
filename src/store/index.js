@@ -15,7 +15,7 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 }, {})
 
 const state = {
-  
+  token: localStorage.getItem('token')
 }
 
 export default new Vuex.Store({

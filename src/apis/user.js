@@ -1,7 +1,7 @@
 import service from 'network/request/request'
 /*
   *使用
-  *this.$http.user.login(data).then(res=>{
+  *this.$http.userApi.login(data).then(res=>{
     console.log(res)
   })
  */

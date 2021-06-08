@@ -1,7 +1,7 @@
 import service from 'network/request/request'
 /*
   *使用
-  *this.$http.cart.cartList(data).then(res=>{
+  *this.$http.cartApi.cartList(data).then(res=>{
     console.log(res)
   })
  */

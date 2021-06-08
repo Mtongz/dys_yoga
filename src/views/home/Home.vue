@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <el-button type="primary" @click="handleClick">el-button</el-button>
     <home-swiper :banner-list="bannerList"></home-swiper>
     <home-recommend></home-recommend>
   </div>
@@ -22,6 +21,10 @@ export default {
   },
   created() {
     this.getBanner();
+    console.log(this.$store.state.token);
+  },
+  mounted() {
+    // console.log(this.$store.state.token);
   },
   methods: {
     handleClick() {
