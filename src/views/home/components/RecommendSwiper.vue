@@ -1,6 +1,6 @@
 <template>
   <div class="recommend-swiper">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" v-show="true" ref="mySwiper">
       <swiper-slide>
         <div class="card-item">
           <el-image class="card-img" :src="require('assets/img/logo.png')"></el-image>
@@ -71,7 +71,7 @@ export default {
   mounted() {
     // current swiper instance
     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-    console.log("this is current swiper instance object", this.swiper);
+    // console.log("this is current swiper instance object", this.swiper);
     // this.swiper.slideTo(3, 1000, false);
   },
   methods: {},

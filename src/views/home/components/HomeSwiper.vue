@@ -56,9 +56,9 @@ export default {
   },
   components: {},
   computed: {
-    swiper() {
-      return this.$refs.homeSwiper.swiper;
-    },
+    // swiper() {
+    //   return this.$refs.homeSwiper.swiper;
+    // },
   },
   watch: {},
   created() {},

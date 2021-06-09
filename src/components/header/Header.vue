@@ -74,7 +74,7 @@
       </section>
       <nav class="header-nav clearfix">
         <ul>
-          <li>NEW ARRIVALS</li>
+          <li @click="">NEW ARRIVALS</li>
           <li>BOTTOMS</li>
           <li>TOPS</li>
           <li>YOGA SET</li>

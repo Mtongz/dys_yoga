@@ -27,7 +27,7 @@
       </section>
       <el-divider></el-divider>
       <section class="">
-        <el-button type="info">立即结算</el-button>
+        <el-button type="info" @click="nowCalc">立即结算</el-button>
         <el-button>继续购物</el-button>
       </section>
     </el-card>
@@ -51,7 +51,11 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    nowCalc() {
+      this.$router.push('/cartCalc')
+    },
+  },
   mounted() {},
 };
 </script>
@@ -61,6 +65,5 @@ export default {
 }
 .card-desc {
   color: #a3a3a3;
-  
 }
 </style>

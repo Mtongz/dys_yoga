@@ -14,6 +14,8 @@ const Commodities = () => import('views/commodities/Commodities')
 const Detail = () => import('views/commodities/detail/Detail')
 
 const Cart = () => import('views/cart/Cart')
+const CartTable = () => import('views/cart/components/CartTable')
+const CartCalculation = () => import('views/cart/components/CartCalculation')
 
 const Login = () => import('views/user/Login')
 
@@ -75,6 +77,7 @@ const routes = [{
     path: '/cart',
     name: 'Cart',
     component: Cart,
+    redirect: '/cartList',
     meta: {
       requireAuth: true,
       keepAlive: false,
@@ -82,6 +85,29 @@ const routes = [{
       isHeaderHide: false,
       isBlack: true
     },
+    children: [{
+      path: '/cartList',
+      name: 'CartTable',
+      component: CartTable,
+      meta: {
+        requireAuth: true,
+        keepAlive: false,
+        // isFooterHide: false,
+        // isHeaderHide: false,
+        isBlack: true
+      },
+    }, {
+      path: '/cartCalc',
+      name: 'CartCalculation',
+      component: CartCalculation,
+      meta: {
+        requireAuth: true,
+        keepAlive: false,
+        // isFooterHide: false,
+        // isHeaderHide: false,
+        isBlack: true
+      }
+    }]
   },
 ]
 
