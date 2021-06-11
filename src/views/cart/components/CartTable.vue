@@ -12,10 +12,10 @@
       <el-table-column
         type="selection"
         :reserve-selection="true"
-        width="75"
+        width="40"
         align="center"
       />
-      <el-table-column prop="shopImg" align="center" width="100" label="商品">
+      <el-table-column prop="shopImg" align="center" width="90" label="商品">
         <template slot-scope="scope">
           <img :src="scope.row.shopImg" class="shopImg" alt="" />
         </template>
@@ -54,7 +54,7 @@
           <span class="count">¥{{ scope.row.goodTotal }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" align="center">
+      <el-table-column label="操作" align="center" width="80">
         <template slot-scope="scope">
           <i
             class="el-icon-delete"
@@ -87,7 +87,7 @@ export default {
           id: 2,
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
-          shop: "小米巨能写 黑色 10支装",
+          shop: "小米巨能写 黑色 10支装小米巨能写 黑色 10支装小米巨能写 黑色 10支装小米巨能写 黑色 10支装小米巨能写 黑色 10支装",
           price: 30,
           number: 1,
           goodTotal: 30,
@@ -106,9 +106,9 @@ export default {
           shopImg:
             "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1606288963.72951431.jpg",
           shop: "小米10",
-          price: 4000,
+          price: 40000,
           number: 1,
-          goodTotal: 4000,
+          goodTotal: 40000,
         },
         {
           id: 5,
@@ -317,7 +317,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .cart-table {
-  width: 70rem;
+  // min-width: 62.4375rem;
   margin: 3.125rem 0 0.625rem 0;
   position: relative;
   ::v-deep .el-input__inner {

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="imbella-footer mt3"
+    class="imbella-footer"
     :class="{
       isBlack: $route.meta.isBlack,
     }"
