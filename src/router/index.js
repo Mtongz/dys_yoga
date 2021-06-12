@@ -15,6 +15,7 @@ const Detail = () => import('views/commodities/detail/Detail')
 
 const Cart = () => import('views/cart/Cart')
 const CartCalculation = () => import('views/cart/components/CartCalculation')
+const CalcSuccess = () => import('views/cart/CalcSuccess')
 
 const Login = () => import('views/user/Login')
 
@@ -88,6 +89,18 @@ const routes = [{
     path: '/cartCalculation',
     name: 'CartCalculation',
     component: CartCalculation,
+    meta: {
+      requireAuth: true,
+      keepAlive: false,
+      isFooterHide: false,
+      isHeaderHide: false,
+      isBlack: true
+    },
+  },
+  {
+    path: '/calcSuccess',
+    name: 'CalcSuccess',
+    component: CalcSuccess,
     meta: {
       requireAuth: true,
       keepAlive: false,
