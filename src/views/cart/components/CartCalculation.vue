@@ -5,8 +5,14 @@
       <span>{{ calcList.userId }}</span>
     </div>
     <div class="calc-form">
-      <span>SHIP TO</span>
-      <el-form ref="form" :model="orderForm" label-width="80px" size="mini">
+      <span style="font-size: 1.25rem;font-weight:600;">SHIP TO</span>
+      <el-form
+        ref="form"
+        :model="orderForm"
+        label-width="80px"
+        size="mini"
+        class="form-content"
+      >
         <div class="df">
           <el-form-item>
             <span>FIRST NAME</span>
@@ -40,7 +46,7 @@
             <div>MOBILE</div>
             <el-select v-model="orderForm.phoneValue" placeholder="请选择">
               <el-option
-                v-for="item in options"
+                v-for="item in mobileOptions"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value"
@@ -57,28 +63,19 @@
           <span>E-mail</span>
           <el-input v-model="orderForm.email"></el-input>
         </el-form-item>
-        <el-table :data="tableData" stripe style="width: 100%">
-          <el-table-column prop="date"> </el-table-column>
+        <el-table :data="selectTableData" stripe style="width: 100%">
+          <el-table-column prop="date" label="商品"> </el-table-column>
           <el-table-column prop="name"> </el-table-column>
-          <el-table-column prop="address"> </el-table-column>
         </el-table>
       </el-form>
       <div class="calc-goods">
-        <div class="dfbc">
-          <div>商品件数</div>
-          <div>{{ 1 }}</div>
-        </div>
-        <div class="dfbc">
-          <div>商品总价</div>
-          <div>{{ 2300 }}</div>
-        </div>
-        <div class="dfbc">
-          <div>应付总额</div>
-          <div>{{ 2300 }}</div>
-        </div>
+        <el-table :data="tableData" style="width: 100%" border>
+          <el-table-column prop="time" label="商品件数"> </el-table-column>
+          <el-table-column prop="address" label="商品总价"> </el-table-column>
+        </el-table>
       </div>
+      <el-button @click="backCart">返回购物车</el-button>
       <el-button type="primary" @click="onSubmit">确认下单</el-button>
-      <el-button>返回购物车</el-button>
     </div>
   </div>
 </template>
@@ -95,16 +92,16 @@ export default {
       orderForm: {
         firstname: "",
         lastname: "",
-        address: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
+        country: "",
+        city: "",
+        code: "",
+        state: "",
+        phoneValue: "",
+        phoneNumber: "",
+        email: "",
       },
       value: [],
-      options: [
+      mobileOptions: [
         {
           value: "选项1",
           label: "黄金糕",
@@ -114,16 +111,20 @@ export default {
           label: "双皮奶",
         },
       ],
-      tableData: [
+      selectTableData: [
         {
           date: "2016-05-02",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄",
         },
         {
           date: "2016-05-03",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄",
+        },
+      ],
+      tableData: [
+        {
+          time: "2016-05-04",
+          address: "1517",
         },
       ],
     };
@@ -132,6 +133,10 @@ export default {
   methods: {
     onSubmit() {
       console.log("submit!");
+      this.$router.replace('/calcSuccess')
+    },
+    backCart() {
+      this.$router.push("/cart");
     },
   },
   mounted() {},
@@ -145,7 +150,7 @@ export default {
   padding: 0.625rem 0 0.625rem 1.25rem;
   span {
     margin-bottom: 0.625rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #a3a3a3;
   }
@@ -154,10 +159,22 @@ export default {
   max-width: 80rem;
   min-width: 62.4375rem;
   margin: 0 auto;
+  padding: 1.25rem;
+  .form-content {
+    margin-top: 0.625rem;
+  }
+  .el-form-item {
+    margin-left: -5rem;
+    margin-right: 1.25rem;
+    span,
+    div {
+      font-size: 12px;
+    }
+  }
 }
 .calc-goods {
   background: pink;
   width: 18.75rem;
-  padding: 1.875rem;
+  margin: 1.25rem 0;
 }
 </style>

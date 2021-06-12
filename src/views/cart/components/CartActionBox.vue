@@ -9,15 +9,14 @@
             <strong>{{ 1 }}</strong> 件
           </span>
         </el-col>
-        <el-col :span="8" class="totalPrice">合计价格：{{ 2300 }}</el-col>
+        <el-col :span="8" class="totalPrice">合计价格：{{ 4000 }}</el-col>
         <el-col :span="8" class="action-btn">
-          <el-button type="primary" size="small" @click="handleNext"
+          <el-button type="primary" @click="handleNext"
             >去结算</el-button
           >
           <el-button
             type="danger"
-            @click="handleOk"
-            size="small"
+            @click="handleCancer"
             :disabled="false"
             >返回</el-button
           >
@@ -39,7 +38,7 @@ export default {
     handleNext() {
       this.$router.push('/cartCalculation')
     },
-    handleOk() {
+    handleCancer() {
       this.$router.back()
     },
   },
