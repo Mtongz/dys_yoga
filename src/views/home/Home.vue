@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-swiper :banner-list="bannerList"></home-swiper>
+    <home-swiper :banner-list="homeData.bannerList"></home-swiper>
     <home-recommend></home-recommend>
   </div>
 </template>
@@ -16,11 +16,16 @@ export default {
   },
   data() {
     return {
-      bannerList:[]
+      homeData: {
+        bannerList: [],
+        recommendList: [],
+        hotList: [],
+        newList: [],
+      },
     };
   },
   created() {
-    this.getBanner();
+    this.getHomeData();
     console.log(this.$store.state.token);
   },
   mounted() {
@@ -30,11 +35,21 @@ export default {
     handleClick() {
       this.$router.push("/login");
     },
-    getBanner() {
+    getHomeData() {
       this.$http.homeApi.banner().then((res) => {
-        console.log(res);
-        this.bannerList = res.data;
+        this.homeData.bannerList = res.data;
       });
+      this.$http.homeApi.homeRecommend().then((res) => {
+        this.homeData.recommendList = res.data;
+      });
+      this.$http.homeApi.homeHot().then((res) => {
+        this.homeData.hotList = res.data;
+      });
+      this.$http.homeApi.homeNew().then((res) => {
+        console.log(res);
+        this.homeData.newList = res.data;
+      });
+      console.log(this.homeData);
     },
   },
 };

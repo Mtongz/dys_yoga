@@ -11,14 +11,21 @@ function banner() {
   return service.get('base/content/banner')
 }
 
-function hot(params) {
-  return service.get('product/hot',{
-    params:{
+function homeRecommend() {
+  return service.get('product/recommend')
+}
 
-    }
-  })
+function homeHot() {
+  return service.get('product/hot')
+}
+
+function homeNew() {
+  return service.get('product/new')
 }
 
 export default {
-  banner
+  banner,
+  homeRecommend,
+  homeHot,
+  homeNew
 }
