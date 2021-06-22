@@ -11,7 +11,7 @@ VueRouter.prototype.push = function push(location) {
 const Home = () => import('views/home/Home')
 
 const Commodities = () => import('views/commodities/Commodities')
-const Detail = () => import('views/commodities/detail/Detail')
+const CommoditiesDetail = () => import('views/commodities/detail/CommoditiesDetail')
 
 const Cart = () => import('views/cart/Cart')
 const CartCalculation = () => import('views/cart/components/CartCalculation')
@@ -62,9 +62,9 @@ const routes = [{
     },
   },
   {
-    path: '/detail',
-    name: 'Detail',
-    component: Detail,
+    path: '/commoditiesDetail',
+    name: 'CommoditiesDetail',
+    component: CommoditiesDetail,
     meta: {
       requireAuth: false,
       keepAlive: false,

@@ -120,12 +120,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  // min-width: 999px;
+  // min-width: 80rem;
   // margin: 0 auto;
   // background: coral;
   .header-container {
-    min-width: 999px;
-    max-width: 1630px;
+    min-width: 80rem;
+    max-width: 101.875rem;
     margin: 0 auto;
     transition: all 0.3s;
     // background: cornflowerblue;
@@ -135,10 +135,10 @@ header {
         h1 {
           .logo-bd {
             display: block;
-            width: 170px;
-            height: 69px;
+            width: 10.625rem;
+            height: 4.3125rem;
             background: url("~assets/img/logo.png") 0 0 no-repeat;
-            background-size: 170px auto;
+            background-size: 10.625rem auto;
             text-indent: -9999px;
             overflow: hidden;
           }
@@ -212,8 +212,8 @@ header {
     .header-nav {
       position: relative;
       // background: crimson;
-      height: 40px;
-      line-height: 40px;
+      height: 2.5rem;
+      line-height: 2.5rem;
       > ul {
         position: absolute;
         top: 0;
@@ -230,20 +230,20 @@ header {
 }
 @media screen and (max-width: 1870px) {
   .header-container {
-    width: 1440px;
+    width: 90rem;
     .header-wrap {
       .imb-search-box {
-        width: 520px !important;
+        width: 32.5rem !important;
       }
     }
   }
 }
 @media screen and (max-width: 1654px) {
   .header-container {
-    width: 1280px;
+    width: 80rem;
     .header-wrap {
       .imb-search-box {
-        width: 480px !important;
+        width: 30rem !important;
       }
     }
   }
@@ -251,10 +251,10 @@ header {
 
 @media screen and (max-width: 1438px) {
   .header-container {
-    width: 999px;
+    width: 62.4375rem;
     .header-wrap {
       .imb-search-box {
-        width: 360px !important;
+        width: 22.5rem !important;
       }
     }
   }

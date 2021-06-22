@@ -2,12 +2,12 @@
   <div class="home-swiper">
     <swiper
       class="swiper"
-      v-if="bannerList.length > 1"
+      v-if="bannerList.length >= 1"
       :options="swiperOption"
       ref="homeSwiper"
     >
       <swiper-slide v-for="(item, index) in bannerList" :key="item.cover">
-        <img class="swiper-img" :src="item.cover" fit="fill" />
+        <img class="swiper-img" :src="item.cover" />
       </swiper-slide>
       <!-- <swiper-slide v-for="(item, index) in imgList" :key="item.url">
         <img class="swiper-img" :src="item.url" />

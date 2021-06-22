@@ -8,7 +8,7 @@ import service from 'network/request/request'
  */
 
 function banner() {
-  return service.get('base/content/banner')
+  return service.get('base/product/banner/records')
 }
 
 function homeRecommend() {

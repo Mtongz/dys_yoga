@@ -1,36 +1,52 @@
 <template>
   <div class="commodities">
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-main>Main</el-main>
+      <el-aside>
+        <commodities-slide></commodities-slide>
+      </el-aside>
+      <el-main>
+        <commodities-main></commodities-main>
+      </el-main>
     </el-container>
   </div>
 </template>
 
 <script>
+import CommoditiesSlide from "./components/CommoditiesSlide";
+import CommoditiesMain from "./components/CommoditiesMain";
 export default {
-  name: "",
-  components: {},
+  name: "Commodities",
+  components: {
+    CommoditiesSlide,
+    CommoditiesMain,
+  },
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    loadData() {
+      this.$http.commodities.productList(data).then((res) => {
+        console.log(res);
+      });
+    },
+  },
   mounted() {},
 };
 </script>
 <style scoped lang="scss">
+.commodities {
+  width: 80rem;
+  margin: 0 auto;
+}
 .el-aside {
-  background-color: #d3dce6;
   color: #333;
   text-align: center;
-  line-height: 200px;
+  width: 200px;
 }
 
 .el-main {
-  background-color: #e9eef3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
+  min-width: 60.5rem;
 }
 </style>

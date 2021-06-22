@@ -6,15 +6,20 @@ import service from 'network/request/request'
   })
  */
 
-function detail(token, productId) {
-  return service.get('product/detail',{
-    params:{
-      user: token,
+// 产品列表
+function productList(data) {
+  return service.get('product/record', data)
+}
+// 产品详情
+function productDetail(productId) {
+  return service.get('product/detail', {
+    params: {
       product_id: productId
     }
   })
 }
 
 export default {
-  detail
+  productList,
+  productDetail
 }

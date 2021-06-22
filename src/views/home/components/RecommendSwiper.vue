@@ -3,7 +3,11 @@
     <swiper :options="swiperOption" v-show="true" ref="mySwiper">
       <swiper-slide>
         <div class="card-item">
-          <el-image class="card-img" :src="require('assets/img/logo.png')"></el-image>
+          <el-image
+            class="card-img"
+            :src="require('assets/img/logo.png')"
+            @click="handleClick"
+          ></el-image>
           <!-- <div class="card-text">
             <span class="card-title">DSFSDKLGSGLSD</span>
             <span class="card-price">$454.00</span>
@@ -74,7 +78,11 @@ export default {
     // console.log("this is current swiper instance object", this.swiper);
     // this.swiper.slideTo(3, 1000, false);
   },
-  methods: {},
+  methods: {
+    handleClick() {
+      this.$router.push('/commodities')
+    },
+  },
 };
 </script>
 
@@ -103,7 +111,6 @@ export default {
     width: 100%;
   }
   .card-text {
-
   }
 }
 </style>

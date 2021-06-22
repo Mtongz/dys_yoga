@@ -9,13 +9,12 @@
 import Vue from 'vue' // 引入vue
 
 // 处理首字母大写 abc => Abc
-function changeStr(str) {
-    // if (/^[a-z]+$/.test(str.charAt(2))) {
-    //     return str;
-    // } else{
-        return str.charAt(0).toUpperCase() + str.slice(1)
-    // }
-}
+// function changeStr(str) {
+//     // if (/^[a-z]+$/.test(str.charAt(2))) {
+//     //     return str;
+//     // } else{
+//         return str.charAt(0).toUpperCase() + str.slice(1)
+// }
 
 /*
     require.context(arg1,arg2,arg3)
