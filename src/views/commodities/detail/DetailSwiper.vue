@@ -86,6 +86,9 @@ export default {
     nextClick() {
       // this.currentIndex = this.activedIndex;
       this.currentIndex++;
+      // setTimeout(function() {
+      //   this.currentIndex = this.activedIndex;
+      // }, 200);
     },
     prevClick() {
       // this.currentIndex = this.activedIndex;
