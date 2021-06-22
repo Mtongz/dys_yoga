@@ -48,13 +48,16 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        on: {
-          slideChangeTransitionStart: function() {
-            console.log(this.activeIndex);
-            this.activedIndex = this.activeIndex//切换结束时，告诉我现在是第几个slide
-            console.log(this.activedIndex);
-          },
-        },
+        // on: {
+        //   slideChangeTransitionStart: function() {
+        //     console.log(this.activeIndex);
+        //     this.activedIndex = this.activeIndex; //切换结束时，告诉我现在是第几个slide
+        //     console.log(this.activedIndex);
+        //   },
+        //   transitionStart() {
+        //     console.log('activeIndex',this.activeIndex);
+        //   },
+        // },
         thumbs: {
           swiper: {
             el: ".gallery-thumbs",
@@ -81,12 +84,12 @@ export default {
       this.currentIndex = index;
     },
     nextClick() {
-      this.currentIndex = this.activedIndex;
-      console.log(this.currentIndex);
-      console.log(this.activedIndex);
+      // this.currentIndex = this.activedIndex;
+      this.currentIndex++;
     },
     prevClick() {
-      this.currentIndex = this.activedIndex;
+      // this.currentIndex = this.activedIndex;
+      this.currentIndex--;
     },
   },
 };
