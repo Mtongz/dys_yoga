@@ -1,3 +1,10 @@
+<!--
+ * @Description: 商品详情图片轮播
+ * @Autor: Tong
+ * @Date: 2021-06-21 10:24:52
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-23 09:40:05
+-->
 <template>
   <div style="height: 500px">
     <!-- swiper1 -->
@@ -43,19 +50,18 @@ export default {
       activedIndex: 0,
       swiperOptionTop: {
         allowTouchMove: false,
-        speed: 200,
+        speed: 150,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
         // on: {
         //   slideChangeTransitionStart: function() {
-        //     console.log(this.activeIndex);
         //     this.activedIndex = this.activeIndex; //切换结束时，告诉我现在是第几个slide
-        //     console.log(this.activedIndex);
+        //     console.log(this.activeIndex);
         //   },
         //   transitionStart() {
-        //     console.log('activeIndex',this.activeIndex);
+        //     console.log(this.activedIndex);
         //   },
         // },
         thumbs: {
@@ -86,6 +92,7 @@ export default {
     nextClick() {
       // this.currentIndex = this.activedIndex;
       this.currentIndex++;
+      console.log(this);
       // setTimeout(function() {
       //   this.currentIndex = this.activedIndex;
       // }, 200);
