@@ -3,19 +3,25 @@
  * @Autor: Tong
  * @Date: 2021-06-21 17:23:49
  * @LastEditors: Tong
- * @LastEditTime: 2021-06-23 17:49:25
+ * @LastEditTime: 2021-06-24 14:11:57
 -->
 <template>
   <div class="option-main">
-    <div class="option-title">
+    <div class="option-title item">
       <h3>{{ detailList.title }}</h3>
     </div>
-    <div class="option-price">
+    <div class="option-price option-item">
       <span class="dt">价格</span>
       <span>{{ detailList.price | calcPrice }}</span>
     </div>
-    <div class="option-color">
-      <el-radio-group v-model="defaultRadio" size="mini" class="radio-group">
+    <div class="option-color option-item df">
+      <div class="dt">选择颜色</div>
+      <el-radio-group
+        v-model="defaultColor"
+        size="mini"
+        class="radio-group"
+        @change="colorHandleChange"
+      >
         <!-- <el-radio
           :label="item.txt"
           :style="'background: ' + item.hex"
@@ -33,10 +39,28 @@
         </div>
       </el-radio-group>
     </div>
-    <div class="option-size"></div>
-    <div class="option-number"></div>
+    <div class="option-size option-item df">
+      <span class="dt">选择尺码</span>
+      <el-radio-group
+        v-model="defaultSize"
+        size="mini"
+        class="radio-group size-group"
+        @change="sizeHandleChange"
+      >
+        <el-radio
+          :label="item.txt"
+          v-for="item in detailList.sizeList"
+          :key="item.txt"
+          border
+          style="margin-right: .625rem;"
+        ></el-radio>
+      </el-radio-group>
+    </div>
+    <div class="option-number option-item">
+      <el-input-number size="mini" v-model="number" :min="1" @change="numHandleChange"></el-input-number>
+    </div>
     <div class="option-submit">
-      <el-input-number size="mini" v-model="number" :min="1"></el-input-number>
+      <el-button style="background: #df3033;color: #fff;">Add to Cart</el-button>
     </div>
   </div>
 </template>
@@ -47,12 +71,32 @@ export default {
   components: {},
   data() {
     return {
-      defaultRadio: "",
+      defaultColor: "",
+      defaultSize: "",
       number: "1",
       detailList: {
         title: "XUELI雪梨女装 气质收腰牛仔连衣裙子女夏小个子高级感短裙送皮带",
         price: "259",
-        sizeList: [],
+        sizeList: [
+          {
+            txt: "S",
+          },
+          {
+            txt: "M",
+          },
+          {
+            txt: "L",
+          },
+          {
+            txt: "XL",
+          },
+          {
+            txt: "XXL",
+          },
+          {
+            txt: "XXXL",
+          },
+        ],
         colors: [
           {
             hex: "#000",
@@ -94,7 +138,17 @@ export default {
     },
   },
   computed: {},
-  methods: {},
+  methods: {
+    colorHandleChange(value) {
+      console.log(value);
+    },
+    sizeHandleChange(value) {
+      console.log(value);
+    },
+    numHandleChange(value) {
+      console.log(value);
+    }
+  },
   mounted() {},
 };
 </script>
@@ -103,26 +157,37 @@ export default {
   color: #999;
   font-family: simsun;
   font-size: 0.875rem;
+  width: 3.75rem;
+  line-height: 1.75rem;
 }
 .option-title {
   font: 700 1rem Arial, "microsoft yahei";
   color: #666;
-  padding-top: 0.625rem;
   line-height: 1.75rem;
   min-height: 1.75rem;
+  margin-bottom: 0.3125rem;
+}
+.option-item {
+  margin-bottom: 20px;
 }
 .option-price {
   color: #e4393c;
-  font-size: 1.25rem;
-  margin: 0.3125rem 0;
+  font-size: 1.375rem;
+}
+.option-size {
+  .size-group {
+    // margin-left: -0.5rem;
+  }
 }
 .color-item {
-  margin: 10px 10px 0 0;
+  margin: 0 0.625rem 0.625rem 0;
 }
 
 .radio-group {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 10px;
+  flex: 1;
 }
 .radio-circle {
   border: 1px solid #ccc;

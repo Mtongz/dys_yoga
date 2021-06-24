@@ -3,7 +3,7 @@
  * @Autor: Tong
  * @Date: 2021-06-04 09:05:15
  * @LastEditors: Tong
- * @LastEditTime: 2021-06-23 13:54:47
+ * @LastEditTime: 2021-06-24 13:54:49
 -->
 <template>
   <div class="commodities-detail">
@@ -11,17 +11,20 @@
       <detail-swiper class="detail-swiper"></detail-swiper>
       <detail-option class="detail-option"></detail-option>
     </div>
+    <detail-recommend class="detail-recommend"></detail-recommend>
   </div>
 </template>
 
 <script>
 import DetailSwiper from "./DetailSwiper";
 import DetailOption from "./DetailOption";
+import DetailRecommend from "./DetailRecommend";
 export default {
   name: "CommoditiesDetail",
   components: {
     DetailSwiper,
     DetailOption,
+    DetailRecommend,
   },
   data() {
     return {};
@@ -45,5 +48,8 @@ export default {
 .detail-option {
   width: 37.5rem; //600px
   margin-left: 3.125rem; //50px
+}
+.detail-recommend {
+  margin-top: .625rem;
 }
 </style>
