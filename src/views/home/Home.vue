@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: Tong
+ * @Date: 2021-06-02 13:44:27
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-25 09:50:24
+-->
 <template>
   <div class="home">
     <home-swiper :banner-list="homeData.bannerList"></home-swiper>
@@ -54,3 +61,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.home {
+  min-width: 80rem;
+}
+</style>

@@ -1,30 +1,28 @@
+<!--
+ * @Description: 
+ * @Autor: Tong
+ * @Date: 2021-06-05 14:50:22
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-25 09:46:27
+-->
 <template>
   <div class="recommend-swiper">
     <swiper :options="swiperOption" v-show="true" ref="mySwiper">
-      <swiper-slide>
-        <div class="card-item">
-          <el-image
-            class="card-img"
-            :src="require('assets/img/logo.png')"
-            @click="handleClick"
-          ></el-image>
-          <!-- <div class="card-text">
-            <span class="card-title">DSFSDKLGSGLSD</span>
-            <span class="card-price">$454.00</span>
-          </div> -->
-          <span class="card-title">DSFSDKLGSGLSD</span>
-          <span class="card-price">$454.00</span>
-        </div>
+      <swiper-slide v-for="(o, index) in 20">
+        <el-card :body-style="{ padding: '0px' }">
+          <img
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            class="image"
+          />
+          <div style="padding: 14px;">
+            <span>好吃的汉堡</span>
+            <div class="bottom clearfix">
+              <time class="time">{{ currentDate }}</time>
+              <el-button type="text" class="button">操作按钮</el-button>
+            </div>
+          </div>
+        </el-card>
       </swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
@@ -40,30 +38,26 @@ export default {
         slidesPerView: 5,
         spaceBetween: 30,
         slidesPerGroup: 5,
-        // 显示分页
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true, //允许分页点击跳转
-        },
+        allowTouchMove: false,
         // 设置点击箭头
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
         //响应式
-        breakpoints: {
-          1440: {
-            //当屏幕宽度大于等于1440
-            slidesPerView: 4,
-            spaceBetween: 50,
-            slidesPerGroup: 4,
-          },
-          1630: {
-            //当屏幕宽度大于等于1630
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
-        },
+        // breakpoints: {
+        //   1440: {
+        //     //当屏幕宽度大于等于1440
+        //     slidesPerView: 4,
+        //     spaceBetween: 50,
+        //     slidesPerGroup: 4,
+        //   },
+        //   1630: {
+        //     //当屏幕宽度大于等于1630
+        //     slidesPerView: 5,
+        //     spaceBetween: 30,
+        //   },
+        // },
       },
     };
   },
@@ -80,7 +74,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$router.push('/commodities')
+      this.$router.push("/commodities");
     },
   },
 };
@@ -95,22 +89,12 @@ export default {
 .recommend-swiper .swiper-container {
   position: relative;
   width: 100%;
-  height: 20rem;
+  // height: 20rem;
 }
 .recommend-swiper .swiper-container .swiper-slide {
   width: 100%;
-  background: yellowgreen;
+  // background: yellowgreen;
   color: #000;
   font-size: 1rem;
-}
-.card-item {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .card-img {
-    width: 100%;
-  }
-  .card-text {
-  }
 }
 </style>

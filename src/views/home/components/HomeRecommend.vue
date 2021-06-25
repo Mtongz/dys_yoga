@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: Tong
+ * @Date: 2021-06-04 11:23:21
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-25 10:00:26
+-->
 <template>
   <div class="home-recommend">
     <recommend-card>
@@ -39,6 +46,7 @@ export default {
     font-size: 14px;
     font-weight: bold;
     border-radius: 10px;
+    cursor: pointer;
     &:hover {
       background: black;
       color: white;

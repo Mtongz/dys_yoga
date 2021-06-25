@@ -140,6 +140,10 @@ a:active {
 	color: gray;
 }
 
+img {
+	width: 100%;
+}
+
 ol,
 ul {
 	list-style: none;
