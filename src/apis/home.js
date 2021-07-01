@@ -1,3 +1,10 @@
+/*
+ * @Description: home api
+ * @Autor: Tong
+ * @Date: 2021-06-07 16:33:17
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-29 09:43:42
+ */
 import service from 'network/request/request'
 
 /*
@@ -12,15 +19,15 @@ function banner() {
 }
 
 function homeRecommend() {
-  return service.get('product/recommend')
+  return service.get('base/recommend/banner/records')
 }
 
 function homeHot() {
-  return service.get('product/hot')
+  return service.get('base/hot/banner/records')
 }
 
 function homeNew() {
-  return service.get('product/new')
+  return service.get('base/new/banner/records')
 }
 
 export default {

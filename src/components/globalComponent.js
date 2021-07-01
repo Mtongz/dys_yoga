@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Autor: Tong
+ * @Date: 2021-06-03 10:35:19
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-07-01 13:13:45
+ */
 /**
 作者：CHICAGO
 链接：https://juejin.im/post/5e475829f265da57444ab10f
@@ -32,5 +39,5 @@ requireComponent.keys().forEach(fileName => {
     // const componentName = changeStr(
     //     fileName.replace(/^\.\//, '').replace(/\.\w+$/, '') // ./child1.vue => child1
     // )
-    Vue.component(componentName, config.default || config) // 动态注册该目录下的所有.vue文件
+    Vue.component(componentName, config.default || config) // 动态注册该目录下的所有.vue文件(包括子目录)
 });

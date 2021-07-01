@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: Tong
+ * @Date: 2021-06-05 09:00:11
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-29 09:39:06
+-->
 <template>
   <div class="home-swiper">
     <swiper
@@ -84,7 +91,8 @@ export default {
     width: 100%;
     // line-height: 32.5rem;
     img {
-      width: 100%;
+      max-width: 100%;
+      max-height: 43.75rem;
       object-fit: cover;
     }
   }

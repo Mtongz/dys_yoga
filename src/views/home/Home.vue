@@ -3,7 +3,7 @@
  * @Autor: Tong
  * @Date: 2021-06-02 13:44:27
  * @LastEditors: Tong
- * @LastEditTime: 2021-06-25 09:50:24
+ * @LastEditTime: 2021-06-29 09:44:42
 -->
 <template>
   <div class="home">
@@ -53,7 +53,6 @@ export default {
         this.homeData.hotList = res.data;
       });
       this.$http.homeApi.homeNew().then((res) => {
-        console.log(res);
         this.homeData.newList = res.data;
       });
       console.log(this.homeData);

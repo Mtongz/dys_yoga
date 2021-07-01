@@ -1,3 +1,10 @@
+<!--
+ * @Description: 产品列表页面
+ * @Autor: Tong
+ * @Date: 2021-06-04 09:05:15
+ * @LastEditors: Tong
+ * @LastEditTime: 2021-06-29 09:56:28
+-->
 <template>
   <div class="commodities">
     <el-container>
@@ -26,12 +33,14 @@ export default {
   computed: {},
   methods: {
     loadData() {
-      this.$http.commodities.productList(data).then((res) => {
+      this.$http.commoditiesApi.productList().then((res) => {
         console.log(res);
       });
     },
   },
-  mounted() {},
+  mounted() {
+    this.loadData()
+  },
 };
 </script>
 <style scoped lang="scss">

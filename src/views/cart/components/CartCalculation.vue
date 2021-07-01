@@ -133,6 +133,7 @@ export default {
   methods: {
     onSubmit() {
       console.log("submit!");
+      // 发送createOrder接口
       this.$router.replace('/calcSuccess')
     },
     backCart() {

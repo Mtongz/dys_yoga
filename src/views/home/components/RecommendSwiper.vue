@@ -3,7 +3,7 @@
  * @Autor: Tong
  * @Date: 2021-06-05 14:50:22
  * @LastEditors: Tong
- * @LastEditTime: 2021-06-25 09:46:27
+ * @LastEditTime: 2021-06-28 09:55:47
 -->
 <template>
   <div class="recommend-swiper">
@@ -13,6 +13,7 @@
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
+            @click="handleClick"
           />
           <div style="padding: 14px;">
             <span>好吃的汉堡</span>
@@ -34,6 +35,7 @@ export default {
   name: "Home",
   data() {
     return {
+      currentDate: new Date(),
       swiperOption: {
         slidesPerView: 5,
         spaceBetween: 30,
